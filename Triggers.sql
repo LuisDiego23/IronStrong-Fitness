@@ -1,0 +1,6 @@
+CREATE TRIGGER trg_Pagos_Delete
+ON Pagos AFTER DELETE
+AS
+INSERT INTO LogPagosEliminados
+SELECT IdPago,Monto,SYSTEM_USER,GETDATE() FROM deleted;
+GO

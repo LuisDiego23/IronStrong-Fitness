@@ -1,0 +1,3 @@
+
+SELECT * FROM Pagos
+WHERE FechaPago >= DATEADD(MONTH,-1,GETDATE());
